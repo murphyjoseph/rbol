@@ -1,0 +1,24 @@
+{
+  "name": "rbol",
+  "version": "1.0.0",
+  "description": "A theme agnostic UI library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murphyjoseph/rbol.git"
+  },
+  "keywords": [
+    "ui",
+    "typescript",
+    "react"
+  ],
+  "author": "Joseph Murphy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murphyjoseph/rbol/issues"
+  },
+  "homepage": "https://github.com/murphyjoseph/rbol#readme"
+}
