@@ -26,8 +26,7 @@ export const Heading: FC<IPropsHeading> = ({
     },
     styles: {
       colorText: color,
-      colorBackground: background,
-      padding: {size: 'one', direction: 'all' }
+      colorBackground: background
     }
   }
 
