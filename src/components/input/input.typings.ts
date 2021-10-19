@@ -2,11 +2,11 @@ import { IStatesField, TInputStates, TInputTypes } from '../..';
 import { IAttributes } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
 
-interface IInputStyles extends IStyles, IStylesTypography {}
+export interface IInputStyles extends IStyles, IStylesTypography {}
 
-interface IInputStylesWithState extends Record<TInputStates, IInputStyles> {}
+export interface IInputStylesWithState extends Record<TInputStates, IInputStyles> {}
 
-interface IInputAttributes extends IAttributes {
+export interface IInputAttributes extends IAttributes {
   id: string
   type?: TInputTypes
   hidden?: boolean

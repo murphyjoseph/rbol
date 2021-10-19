@@ -1,9 +1,25 @@
-// import { IInput, ILabel } from "..";
+import { IInputAttributes, IInputStylesWithState, ILabelAttributes, ILabelStylesWithState } from '..';
+import { IStatesField, IStyles } from '../..';
 
-// interface IFieldInputLabel extends Omit<ILabel, 'for', 
+export interface IFieldInputStyles extends IStyles {}
 
-// export interface IFieldInput {
-//   for: string;
-//   traitLabel: ILabel
-//   traitInput: IInput
-// }
+export interface IFieldInputLabel {
+  text: string
+  attributes?: ILabelAttributes
+  styles?: ILabelStylesWithState
+}
+
+export interface IFieldInputInput {
+  attributes?: Omit<IInputAttributes, 'type'>
+  styles?: IInputStylesWithState
+}
+
+export interface IFieldInput extends IStatesField {
+  styles?: IFieldInputStyles
+  traitLabel: IFieldInputLabel
+  traitInput: IFieldInputInput
+}
+
+export type TFieldInput = {
+  traits: IFieldInput
+}

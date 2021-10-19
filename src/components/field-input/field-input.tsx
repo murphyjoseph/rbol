@@ -1,82 +1,53 @@
-// import React, { forwardRef } from 'react';
-// import { style } from 'typestyle';
-// import { ILabel, Label } from '../label';
-// import { mixinFill } from '../../styles/general';
-// import { TextAlert } from '../text/text-alert';
-// import { FieldRootInput } from './field-root-input';
-// import { IFieldRootInput, ITraitFieldText } from './fields.interface';
-// import {
-//   mixinFlex,
-//   mixinFlexOrder0,
-//   mixinFlexOrder1,
-//   mixinFlexOrder2,
-//   mixinFlexAuto,
-//   mixinFlexDirection,
-// } from '../../styles/grid';
+import React, { FC } from 'react';
+import { style } from 'typestyle';
+import { Input, Label } from '..';
+import { mixinFieldInput } from './field-input.mixin';
+import { TFieldInput } from './field-input.typings';
 
-// export const FieldText = forwardRef<HTMLInputElement, ITraitFieldText>(
-//   ({ traits }, ref) => {
+export const FieldInput: FC<TFieldInput> = ({ traits }) => {
 
-//     const {
-//       for: _for,
-//       injectCSS,
-//       isDisabled,
-//       isInvalid,
-//       isRequired,
-//       traitLabel: _traitLabel,
-//       traitFieldText: _traitField,
-//       traitTextAlert: _traitTextAlert,
-//     } = traits;
+  const {
+    traitInput,
+    traitLabel,
+    styles,
+    isInvalid,
+    isRequired,
+    isDisabled,
+    isChecked,
+    isValid,
+    isDirty,
+  } = traits;
 
-//     const cssCore = style(
-//       mixinFlex,
-//       mixinFlexDirection('column'),
-//       mixinFill(100),
-//       !!injectCSS && injectCSS
-//     );
+  const traitsForInput = {
+    ...traitInput,
+    type: 'text',
+    isInvalid,
+    isRequired,
+    isDisabled,
+    isChecked,
+    isValid,
+    isDirty,
+  }
 
-//     const traitLabel: ILabel = {
-//       ..._traitLabel,
-//       isRequired,
-//       for: _for,
-//       injectCSS: {
-//         ..._traitLabel.injectCSS && _traitLabel.injectCSS,
-//         ...mixinFlexAuto(1),
-//         ...mixinFlexOrder0,
-//       },
-//     };
+  const traitsForLabel = {
+    ...traitLabel,
+    isInvalid,
+    isRequired,
+    isDisabled,
+    isChecked,
+    isValid,
+    isDirty,
+  }
 
-//     const traitField: IFieldRootInput = {
-//       ..._traitField,
-//       isRequired,
-//       isDisabled,
-//       isInvalid,
-//       id: _for,
-//       injectCSS: {
-//         ..._traitField.injectCSS && _traitField.injectCSS,
-//         ...mixinFlexAuto(1),
-//         ...mixinFlexOrder1,
-//       },
-//     };
+  const internalStyles = style({
+    ...styles && mixinFieldInput(styles),
+  });
 
-//     return (
-//       <div className={cssCore}>
-//         <FieldRootInput traits={traitField} ref={ref} />
-//         <Label traits={traitLabel} />
-//         {
-//           isInvalid && _traitTextAlert && _traitTextAlert.text && (
-//             <TextAlert
-//               traits={{
-//                 ..._traitTextAlert,
-//                 injectCSS: {
-//                   ...mixinFlexAuto(1),
-//                   ...mixinFlexOrder2,
-//                 },
-//               }}
-//             />
-//           )
-//         }
-//       </div>
-//     );
-//   }
-// );
+  return (
+    <div className={internalStyles}>
+      <Input traits={traitsForInput} />
+      <Label traits={traitsForLabel} />
+    </div>
+  );
+
+};

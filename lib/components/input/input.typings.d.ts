@@ -1,11 +1,11 @@
-import { TInputStates, TInputTypes } from '../..';
+import { IStatesField, TInputStates, TInputTypes } from '../..';
 import { IAttributes } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
-interface IInputStyles extends IStyles, IStylesTypography {
+export interface IInputStyles extends IStyles, IStylesTypography {
 }
-interface IInputStylesWithState extends Record<TInputStates, IInputStyles> {
+export interface IInputStylesWithState extends Record<TInputStates, IInputStyles> {
 }
-interface IInputAttributes extends IAttributes {
+export interface IInputAttributes extends IAttributes {
     id: string;
     type?: TInputTypes;
     hidden?: boolean;
@@ -19,17 +19,10 @@ interface IInputAttributes extends IAttributes {
     defaultValue?: any;
     maxLength?: number;
 }
-export interface IInput {
+export interface IInput extends IStatesField {
     styles?: IInputStylesWithState;
     attributes?: IInputAttributes;
-    isDisabled?: boolean;
-    isInvalid?: boolean;
-    isRequired?: boolean;
-    isChecked?: boolean;
-    isDirty?: boolean;
-    isValid?: boolean;
 }
 export declare type TInput = {
     traits: IInput;
 };
-export {};

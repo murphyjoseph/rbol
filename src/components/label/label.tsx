@@ -46,7 +46,6 @@ export const Label: FC<TLabel> = ({ traits }) => {
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
       htmlFor={attributes?.for}
-
       {...isInvalid && attrInvalid}
       {...isRequired && attrRequired}
       {...isDisabled && attrDisabled}

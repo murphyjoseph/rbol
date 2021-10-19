@@ -1,13 +1,13 @@
 import { IAttributes, IAttributesAction } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
-interface IButtonStyles extends IStyles, IStylesTypography {
+export interface IButtonStyles extends IStyles, IStylesTypography {
 }
 export declare type TButtonStates = 'base' | 'hover' | 'focus' | 'disabled' | 'selected' | 'loading';
-interface IButtonStylesWithState extends Record<TButtonStates, IButtonStyles> {
+export interface IButtonStylesWithState extends Record<TButtonStates, IButtonStyles> {
 }
-interface IButtonAttributes extends IAttributes, IAttributesAction {
+export interface IButtonAttributes extends IAttributes, IAttributesAction {
 }
-interface IButton {
+export interface IButton {
     styles?: Partial<IButtonStylesWithState>;
     attributes?: IButtonAttributes;
     text: string;
@@ -18,4 +18,3 @@ interface IButton {
 export declare type TButton = {
     traits: IButton;
 };
-export {};
