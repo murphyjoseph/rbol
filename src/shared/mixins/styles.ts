@@ -1,5 +1,5 @@
-import { IStyles } from "../typings/styles"
-import { mixinSpacing } from "./spacing";
+import { IStyles } from '../typings/styles';
+import { mixinSpacing } from './spacing';
 
 export const mixinStyles = (
   styles: IStyles

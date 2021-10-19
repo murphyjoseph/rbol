@@ -13,7 +13,7 @@ export const Input: FC<TInput> = ({ traits }) => {
     isDisabled,
     isChecked,
     isValid,
-    isDirty
+    isDirty,
   } = traits;
 
   const internalStyles = style({
@@ -28,7 +28,7 @@ export const Input: FC<TInput> = ({ traits }) => {
         ...!!styles.invalid && { '&&&&&&:data-invalid': mixinInput(styles.invalid) },
         ...!!styles.disabled && { '&&&&&&&&:data-disabled': mixinInput(styles.disabled) },
       },
-    }
+    },
   });
 
   const attrInvalid = { 'data-invalid': true };
@@ -63,7 +63,7 @@ export const Input: FC<TInput> = ({ traits }) => {
       {...isDisabled && attrDisabled}
       {...isValid && attrValid}
       {...isDirty && attrDirty}
-    /> 
-  )
+    />
+  );
 
-}
+};

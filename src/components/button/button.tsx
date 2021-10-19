@@ -11,7 +11,7 @@ export const Button: FC<TButton> = ({ traits }) => {
     isDisabled,
     isLoading,
     isSelected,
-    text
+    text,
   } = traits;
 
   const internalStyles = style({
@@ -24,7 +24,7 @@ export const Button: FC<TButton> = ({ traits }) => {
         ...!!styles.loading && { '&&&&:data-loading': mixinButton(styles.loading) },
         ...!!styles.disabled && { '&&&&&:data-disabled': mixinButton(styles.disabled) },
       },
-    }
+    },
   });
 
   const attrDisabled = { 'data-disabled': true };
@@ -38,12 +38,13 @@ export const Button: FC<TButton> = ({ traits }) => {
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
       onClick={attributes?.onClick}
+      type="button"
       {...isDisabled && attrDisabled}
       {...isLoading && attrLoading}
       {...isSelected && attrSelected}
-    > 
+    >
       { text }
     </button>
-  )
+  );
 
-}
+};

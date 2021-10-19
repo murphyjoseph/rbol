@@ -1,9 +1,10 @@
 {
   "name": "rbol",
-  "version": "1.0.02",
+  "version": "1.0.04",
   "description": "A theme agnostic UI library",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -45,7 +46,6 @@
     "compression-webpack-plugin": "^6.0.3",
     "css-loader": "^5.0.0",
     "csstips": "^1.2.0",
-    "csstype": "^3.0.8",
     "csx": "^10.0.1",
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",

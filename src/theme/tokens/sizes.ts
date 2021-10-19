@@ -1,4 +1,4 @@
-import { ITokenSize } from "../";
+import { ITokenSize } from '..';
 
 export const tokenSizeFont: ITokenSize = {
   one: 0.875,
@@ -12,7 +12,7 @@ export const tokenSizeFont: ITokenSize = {
   nine: 1.875,
   ten: 2.4,
   eleven: 2.6,
-  twelve : 2.8,
+  twelve: 2.8,
   unit: 'em',
 };
 

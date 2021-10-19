@@ -8,7 +8,7 @@ export const Label: FC<TLabel> = ({ traits }) => {
   const {
     text,
     attributes,
-    styles
+    styles,
   } = traits;
 
   const internalStyles = style({
@@ -23,7 +23,7 @@ export const Label: FC<TLabel> = ({ traits }) => {
         ...!!styles.invalid && { '&&&&&&:data-invalid': mixinLabel(styles.invalid) },
         ...!!styles.disabled && { '&&&&&&&&:data-disabled': mixinLabel(styles.disabled) },
       },
-    }
+    },
   });
 
   return (
@@ -33,9 +33,9 @@ export const Label: FC<TLabel> = ({ traits }) => {
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
       htmlFor={attributes?.for}
-    > 
-      { text } 
+    >
+      { text }
     </label>
-  )
+  );
 
-}
+};

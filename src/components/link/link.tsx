@@ -9,7 +9,7 @@ export const Link: FC<TLink> = ({ traits }) => {
     attributes,
     styles,
     isDisabled,
-    text
+    text,
   } = traits;
 
   const internalStyles = style({
@@ -21,7 +21,7 @@ export const Link: FC<TLink> = ({ traits }) => {
         ...!!styles.focus && { '&&&:focus': mixinLink(styles.focus) },
         ...!!styles.disabled && { '&&&&:data-disabled': mixinLink(styles.disabled) },
       },
-    }
+    },
   });
 
   const attrDisabled = { 'data-disabled': true };
@@ -35,9 +35,9 @@ export const Link: FC<TLink> = ({ traits }) => {
       href={attributes?.href}
       target={attributes?.target}
       {...isDisabled && attrDisabled}
-    > 
+    >
       { text }
     </a>
-  )
+  );
 
-}
+};

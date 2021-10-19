@@ -10,15 +10,15 @@ export const Typography: FC<TTypography> = ({ traits }) => {
     tag,
     text,
     attributes,
-    styles
+    styles,
   } = traits;
 
-  let Tag = tag;
+  const Tag = tag;
 
   const internalStyles = style({
     ...styles && mixinStyles(styles),
     ...styles && mixinTypography(styles),
-    ...styles?.injectCSS
+    ...styles?.injectCSS,
   });
 
   return (
@@ -27,9 +27,9 @@ export const Typography: FC<TTypography> = ({ traits }) => {
       id={attributes?.id}
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
-    > 
-      { text } 
+    >
+      { text }
     </Tag>
-  )
+  );
 
-}
+};

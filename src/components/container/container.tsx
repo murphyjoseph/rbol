@@ -8,13 +8,13 @@ export const Container: FC<TContainer> = ({ traits, children }) => {
   const {
     tag,
     attributes,
-    styles
+    styles,
   } = traits;
 
-  let Tag = tag;
+  const Tag = tag;
 
   const internalStyles = style({
-    ...styles && mixinContainer(styles)
+    ...styles && mixinContainer(styles),
   });
 
   return (
@@ -23,9 +23,9 @@ export const Container: FC<TContainer> = ({ traits, children }) => {
       id={attributes?.id}
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
-    > 
-      { children } 
+    >
+      { children }
     </Tag>
-  )
+  );
 
-}
+};

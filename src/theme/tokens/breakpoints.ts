@@ -1,4 +1,4 @@
-import { ITokenBreakpoints } from "..";
+import { ITokenBreakpoints } from '..';
 
 export const tokenBreakpoints: ITokenBreakpoints = {
   xs: '',
@@ -7,5 +7,5 @@ export const tokenBreakpoints: ITokenBreakpoints = {
   lg: '',
   xl: '',
   mobile: '',
-  desktop: ''
-}
+  desktop: '',
+};

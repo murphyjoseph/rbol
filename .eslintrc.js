@@ -37,6 +37,11 @@ module.exports = {
     'import'
   ],
   rules: {
+    // need to come back to these and turn them back on
+    'import/no-cycle': 'off',
+    'consistent-return': 'off',
+    'no-else-return': 'off',
+
     'no-unused-vars': 'off',
     'import/no-extraneous-dependencies': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
@@ -66,7 +71,7 @@ module.exports = {
     'space-in-parens': ['error', 'never'],
     indent: ['error', 2, { SwitchCase: 1 }],
     'import/prefer-default-export': 'off',
-    'max-len': ['error', { code: 100 }],
+    'max-len': ['error', { code: 125 }],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['off'],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],

@@ -1,4 +1,4 @@
-import { IStylesTypography } from "../typings/styles"
+import { IStylesTypography } from '../typings/styles';
 
 export const mixinTypography = (
   styles: IStylesTypography
