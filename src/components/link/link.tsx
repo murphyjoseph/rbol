@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { style } from 'typestyle';
-import { Typography } from '../typography/typography';
+import { mixinLink } from './link.mixin';
 import { TLink } from './link.typings';
 
 export const Link: FC<TLink> = ({ traits }) => {
@@ -8,22 +8,23 @@ export const Link: FC<TLink> = ({ traits }) => {
   const {
     attributes,
     styles,
-    traitTypography,
-    // isDisabled,
-    
+    isDisabled,
+    text
   } = traits;
 
   const internalStyles = style({
-    ...styles?.colorBackground && { background: styles.colorBackground },
-    // ...styles?.colorText && { color: styles.colorText },
-    ...styles?.textTransform && { textTransform: styles.textTransform },
-    ...styles?.textAlign && { textAlign: styles.textAlign },
-    ...styles?.whiteSpace && { whiteSpace: styles.whiteSpace },
-    ...styles?.display && { display: styles.display },
-    ...styles?.injectCSS && { ...styles.injectCSS }
+    ...styles && {
+      ...styles.base && mixinLink(styles.base),
+      $nest: {
+        ...!!styles.visited && { '&:visited': mixinLink(styles.visited) },
+        ...!!styles.hover && { '&&:hover': mixinLink(styles.hover) },
+        ...!!styles.focus && { '&&&:focus': mixinLink(styles.base) },
+        ...!!styles.disabled && { '&&&&:data-disabled': mixinLink(styles.disabled) },
+      },
+    }
   });
 
-  // const attrLoading = { 'data-loading': true };
+  const attrDisabled = { 'data-disabled': true };
 
   return (
     <a
@@ -33,9 +34,9 @@ export const Link: FC<TLink> = ({ traits }) => {
       tabIndex={attributes?.tabindex}
       href={attributes?.href}
       target={attributes?.target}
-      // {...isLoading && attrLoading}
+      {...isDisabled && attrDisabled}
     > 
-      <Typography traits={traitTypography} />
+      { text }
     </a>
   )
 
