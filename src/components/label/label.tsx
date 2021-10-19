@@ -9,6 +9,12 @@ export const Label: FC<TLabel> = ({ traits }) => {
     text,
     attributes,
     styles,
+    isInvalid,
+    isRequired,
+    isDisabled,
+    isChecked,
+    isValid,
+    isDirty,
   } = traits;
 
   const internalStyles = style({
@@ -26,6 +32,13 @@ export const Label: FC<TLabel> = ({ traits }) => {
     },
   });
 
+  const attrInvalid = { 'data-invalid': true };
+  const attrDisabled = { 'data-disabled': true };
+  const attrRequired = { 'data-required': true };
+  const attrValid = { 'data-valid': true };
+  const attrDirty = { 'data-dirty': true };
+  const attrChecked = { 'data-checked': true };
+
   return (
     <label
       className={[internalStyles, attributes?.className].join(' ')}
@@ -33,6 +46,13 @@ export const Label: FC<TLabel> = ({ traits }) => {
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
       htmlFor={attributes?.for}
+
+      {...isInvalid && attrInvalid}
+      {...isRequired && attrRequired}
+      {...isDisabled && attrDisabled}
+      {...isValid && attrValid}
+      {...isDirty && attrDirty}
+      {...isChecked && attrChecked}
     >
       { text }
     </label>

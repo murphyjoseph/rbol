@@ -36,6 +36,7 @@ export const Input: FC<TInput> = ({ traits }) => {
   const attrRequired = { 'data-required': true };
   const attrValid = { 'data-valid': true };
   const attrDirty = { 'data-dirty': true };
+  const attrChecked = { 'data-checked': true };
 
   return (
     <input
@@ -63,6 +64,7 @@ export const Input: FC<TInput> = ({ traits }) => {
       {...isDisabled && attrDisabled}
       {...isValid && attrValid}
       {...isDirty && attrDirty}
+      {...isChecked && attrChecked}
     />
   );
 

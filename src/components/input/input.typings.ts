@@ -1,4 +1,4 @@
-import { TInputStates, TInputTypes } from '../..';
+import { IStatesField, TInputStates, TInputTypes } from '../..';
 import { IAttributes } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
 
@@ -21,15 +21,9 @@ interface IInputAttributes extends IAttributes {
   maxLength?: number
 }
 
-export interface IInput {
+export interface IInput extends IStatesField {
   styles?: IInputStylesWithState
   attributes?: IInputAttributes
-  isDisabled?: boolean
-  isInvalid?: boolean
-  isRequired?: boolean
-  isChecked?: boolean
-  isDirty?: boolean
-  isValid?: boolean
 }
 
 export type TInput = {

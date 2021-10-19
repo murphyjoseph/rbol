@@ -1,4 +1,4 @@
-import { TInputStates } from '../..';
+import { IStatesField, TInputStates } from '../..';
 import { IAttributes } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
 
@@ -10,7 +10,7 @@ interface ILabelAttributes extends IAttributes {
   for: string
 }
 
-export interface ILabel {
+export interface ILabel extends IStatesField {
   text: string
   styles?: ILabelStylesWithState
   attributes?: ILabelAttributes
