@@ -1,6 +1,5 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ButtonPrimary, ButtonPrimaryProps } from '../examples/button-primary';
 import { ContainerMain, ContainerMainProps } from '../examples/container';
 
 export default {
