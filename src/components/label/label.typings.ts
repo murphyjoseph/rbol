@@ -1,18 +1,21 @@
+import { TInputStates } from '../..';
 import { IAttributes } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
 
 interface ILabelStyles extends IStyles, IStylesTypography {}
 
+interface ILabelStylesWithState extends Record<TInputStates, ILabelStyles> {}
+
 interface ILabelAttributes extends IAttributes {
-  for: string;
+  for: string
 }
 
 export interface ILabel {
-  text: string;
-  styles?: ILabelStyles;
-  attributes?: ILabelAttributes;
+  text: string
+  styles?: ILabelStylesWithState
+  attributes?: ILabelAttributes
 }
 
 export type TLabel = {
-  traits: ILabel;
+  traits: ILabel
 }

@@ -1,6 +1,6 @@
 {
   "name": "rbol",
-  "version": "1.0.01",
+  "version": "1.0.02",
   "description": "A theme agnostic UI library",
   "main": "index.js",
   "scripts": {

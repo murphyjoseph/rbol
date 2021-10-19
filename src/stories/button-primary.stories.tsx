@@ -10,9 +10,9 @@ export default {
 const Template: Story<ButtonPrimaryProps> = (args) => <ButtonPrimary {...args} />;
 
 const argsDefault: ButtonPrimaryProps = {
-  text: 'Example Heading',
+  text: 'Example Button',
   onClick: () => console.log('hit'),
-  id: 'Link Element',
+  id: 'Button Element',
 };
 
 export const Primary = Template.bind({});

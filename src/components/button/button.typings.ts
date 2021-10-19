@@ -10,14 +10,14 @@ interface IButtonStylesWithState extends Record<TButtonStates, IButtonStyles> {}
 interface IButtonAttributes extends IAttributes, IAttributesAction {}
 
 interface IButton {
-  styles?: Partial<IButtonStylesWithState>;
-  attributes?: IButtonAttributes;
-  text: string;
-  isDisabled?: boolean;
-  isSelected?: boolean;
-  isLoading?: boolean;
+  styles?: Partial<IButtonStylesWithState>
+  attributes?: IButtonAttributes
+  text: string
+  isDisabled?: boolean
+  isSelected?: boolean
+  isLoading?: boolean
 }
 
 export type TButton = {
-  traits: IButton;
+  traits: IButton
 }
