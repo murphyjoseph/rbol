@@ -21,7 +21,8 @@ export type TSizes = keyof typeof ESizes;
 
 export enum ESizesTypes {
   spacing = 'spacing',
-  typography = 'typography'
+  typography = 'typography',
+  container = 'container'
 }
 
 export type TSizesTypes = keyof typeof ESizesTypes;

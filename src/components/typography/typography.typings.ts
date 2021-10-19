@@ -1,4 +1,3 @@
-import * as CSS from 'csstype';
 import { IAttributes } from '../../shared/typings/attributes';
 import { IStyles, IStylesTypography } from '../../shared/typings/styles';
 

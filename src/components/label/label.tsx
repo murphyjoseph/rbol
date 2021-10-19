@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { style } from 'typestyle';
-import { mixinTypography } from '../..';
-import { mixinStyles } from '../../shared/mixins/styles';
+import { mixinLabel } from './label.mixin';
 import { TLabel } from './label.typings';
 
 export const Label: FC<TLabel> = ({ traits }) => {
@@ -13,9 +12,18 @@ export const Label: FC<TLabel> = ({ traits }) => {
   } = traits;
 
   const internalStyles = style({
-    ...styles && mixinStyles(styles),
-    ...styles && mixinTypography(styles),
-    ...styles?.injectCSS
+    ...styles && {
+      ...styles.base && mixinLabel(styles.base),
+      $nest: {
+        ...!!styles.hover && { '&:hover': mixinLabel(styles.hover) },
+        ...!!styles.focus && { '&&:focus': mixinLabel(styles.focus) },
+        ...!!styles.dirty && { '&&&:data-dirty': mixinLabel(styles.dirty) },
+        ...!!styles.checked && { '&&&&:data-checked': mixinLabel(styles.checked) },
+        ...!!styles.valid && { '&&&&&:data-valid': mixinLabel(styles.valid) },
+        ...!!styles.invalid && { '&&&&&&:data-invalid': mixinLabel(styles.invalid) },
+        ...!!styles.disabled && { '&&&&&&&&:data-disabled': mixinLabel(styles.disabled) },
+      },
+    }
   });
 
   return (

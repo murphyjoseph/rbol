@@ -31,3 +31,19 @@ export const tokenSizeSpacing: ITokenSize = {
   twelve: 5,
   unit: 'em',
 };
+
+export const tokenSizeContainer: ITokenSize = {
+  one: 10,
+  two: 17.5,
+  three: 25,
+  four: 32.5,
+  five: 40,
+  six: 47.5,
+  seven: 55,
+  eight: 62.5,
+  nine: 70,
+  ten: 77.5,
+  eleven: 85,
+  twelve: 92.5,
+  unit: 'em',
+};
