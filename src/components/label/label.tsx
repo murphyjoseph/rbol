@@ -1,19 +1,16 @@
 import React, { FC } from 'react';
 import { style } from 'typestyle';
+import { mixinTypography } from '../..';
 import { mixinStyles } from '../../shared/mixins/styles';
-import { mixinTypography } from '../../shared/mixins/typography';
-import { TTypography } from './typography.typings';
+import { TLabel } from './label.typings';
 
-export const Typography: FC<TTypography> = ({ traits }) => {
+export const Label: FC<TLabel> = ({ traits }) => {
 
   const {
-    tag,
     text,
     attributes,
     styles
   } = traits;
-
-  let Tag = tag;
 
   const internalStyles = style({
     ...styles && mixinStyles(styles),
@@ -22,14 +19,15 @@ export const Typography: FC<TTypography> = ({ traits }) => {
   });
 
   return (
-    <Tag
+    <label
       className={[internalStyles, attributes?.className].join(' ')}
       id={attributes?.id}
       title={attributes?.title}
       tabIndex={attributes?.tabindex}
+      htmlFor={attributes?.for}
     > 
       { text } 
-    </Tag>
+    </label>
   )
 
 }

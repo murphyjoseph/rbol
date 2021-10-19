@@ -19,7 +19,7 @@ export const Button: FC<TButton> = ({ traits }) => {
       ...styles.base && mixinButton(styles.base),
       $nest: {
         ...!!styles.hover && { '&:hover': mixinButton(styles.hover) },
-        ...!!styles.focus && { '&&:focus': mixinButton(styles.base) },
+        ...!!styles.focus && { '&&:focus': mixinButton(styles.focus) },
         ...!!styles.selected && { '&&&:data-selected': mixinButton(styles.selected) },
         ...!!styles.loading && { '&&&&:data-loading': mixinButton(styles.loading) },
         ...!!styles.disabled && { '&&&&&:data-disabled': mixinButton(styles.disabled) },
