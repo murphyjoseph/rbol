@@ -19,7 +19,7 @@ export const Link: FC<TLink> = ({ traits }) => {
         ...!!styles.visited && { '&:visited': mixinLink(styles.visited) },
         ...!!styles.hover && { '&&:hover': mixinLink(styles.hover) },
         ...!!styles.focus && { '&&&:focus': mixinLink(styles.focus) },
-        ...!!styles.disabled && { '&&&&:data-disabled': mixinLink(styles.disabled) },
+        ...!!styles.disabled && { '&&&&[data-disabled]': mixinLink(styles.disabled) },
       },
     },
   });

@@ -10,16 +10,21 @@ export default {
 const Template: Story<ButtonMainProps> = (args) => <ButtonMain {...args} />;
 
 const argsDefault: ButtonMainProps = {
-  text: 'Example Button',
+  text: 'button',
   onClick: () => console.log('hit'),
-  id: 'Button Element',
+  isDisabled: false,
   variant: 'primary',
 };
 
 export const Primary = Template.bind({});
-Primary.args = argsDefault;
-
-export const Secondary = Template.bind({
+Primary.args = {
   ...argsDefault,
+  text: 'Button Primary',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  ...argsDefault,
+  text: 'Button Secondary',
   variant: 'secondary',
-});
+};

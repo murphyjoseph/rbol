@@ -5,15 +5,19 @@ export const buttonMainPrimary: Partial<IButtonStylesWithState> = {
     colorText: 'white',
     colorBackground: 'black',
     textDecoration: 'underline',
-    padding: { direction: 'all', size: 'two' }
+    padding: { direction: 'all', size: 'two' },
   },
   hover: {
-    colorBackground: 'grey',
-    textDecoration: 'none'
+    colorBackground: 'darkgrey',
+    textDecoration: 'none',
+  },
+  selected: {
+    colorBackground: 'darkgrey',
+    textDecoration: 'none',
   },
   disabled: {
-    colorBackground: 'darkgrey',
-    colorText: 'lightgrey'
+    colorBackground: 'white',
+    colorText: 'black',
   },
 };
 
@@ -22,14 +26,18 @@ export const buttonMainSecondary: Partial<IButtonStylesWithState> = {
     colorText: 'white',
     colorBackground: 'blue',
     textDecoration: 'underline',
-    padding: { direction: 'all', size: 'two' }
+    padding: { direction: 'all', size: 'two' },
   },
   hover: {
-    colorBackground: 'crimson',
-    textDecoration: 'none'
+    colorBackground: 'darkblue',
+    textDecoration: 'none',
+  },
+  selected: {
+    colorBackground: 'darkblue',
+    textDecoration: 'none',
   },
   disabled: {
     colorBackground: 'darkgrey',
-    colorText: 'lightgrey'
+    colorText: 'lightgrey',
   },
 };

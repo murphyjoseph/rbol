@@ -22,11 +22,11 @@ export const Input: FC<TInput> = ({ traits }) => {
       $nest: {
         ...!!styles.hover && { '&:hover': mixinInput(styles.hover) },
         ...!!styles.focus && { '&&:focus': mixinInput(styles.focus) },
-        ...!!styles.dirty && { '&&&:data-dirty': mixinInput(styles.dirty) },
-        ...!!styles.checked && { '&&&&:data-checked': mixinInput(styles.checked) },
-        ...!!styles.valid && { '&&&&&:data-valid': mixinInput(styles.valid) },
-        ...!!styles.invalid && { '&&&&&&:data-invalid': mixinInput(styles.invalid) },
-        ...!!styles.disabled && { '&&&&&&&&:data-disabled': mixinInput(styles.disabled) },
+        ...!!styles.dirty && { '&&&[data-dirty]': mixinInput(styles.dirty) },
+        ...!!styles.checked && { '&&&&[data-checked]': mixinInput(styles.checked) },
+        ...!!styles.valid && { '&&&&&[data-valid]': mixinInput(styles.valid) },
+        ...!!styles.invalid && { '&&&&&&[data-invalid]': mixinInput(styles.invalid) },
+        ...!!styles.disabled && { '&&&&&&&&[data-disabled]': mixinInput(styles.disabled) },
       },
     },
   });

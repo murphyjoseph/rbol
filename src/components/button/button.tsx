@@ -20,9 +20,9 @@ export const Button: FC<TButton> = ({ traits }) => {
       $nest: {
         ...!!styles.hover && { '&:hover': mixinButton(styles.hover) },
         ...!!styles.focus && { '&&:focus': mixinButton(styles.focus) },
-        ...!!styles.selected && { '&&&:data-selected': mixinButton(styles.selected) },
-        ...!!styles.loading && { '&&&&:data-loading': mixinButton(styles.loading) },
-        ...!!styles.disabled && { '&&&&&:data-disabled': mixinButton(styles.disabled) },
+        ...!!styles.selected && { '&&&[data-selected]': mixinButton(styles.selected) },
+        ...!!styles.loading && { '&&&&[data-loading]': mixinButton(styles.loading) },
+        ...!!styles.disabled && { '&&&&&[data-disabled]': mixinButton(styles.disabled) },
       },
     },
   });
@@ -39,6 +39,7 @@ export const Button: FC<TButton> = ({ traits }) => {
       tabIndex={attributes?.tabindex}
       onClick={attributes?.onClick}
       type="button"
+      disabled={isDisabled}
       {...isDisabled && attrDisabled}
       {...isLoading && attrLoading}
       {...isSelected && attrSelected}

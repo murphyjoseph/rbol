@@ -7,6 +7,7 @@ export interface ButtonMainProps {
   id?: string
   onClick: () => void
   isDisabled?: boolean
+  isSelected?: boolean
   variant: 'primary' | 'secondary'
 }
 
@@ -15,12 +16,14 @@ export const ButtonMain: FC<ButtonMainProps> = ({
   onClick,
   id,
   isDisabled,
+  isSelected,
   variant,
 }) => {
 
   const traits: TButton['traits'] = {
     text,
     isDisabled,
+    isSelected,
     attributes: {
       id,
       onClick

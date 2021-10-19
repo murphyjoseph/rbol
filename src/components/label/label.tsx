@@ -23,11 +23,11 @@ export const Label: FC<TLabel> = ({ traits }) => {
       $nest: {
         ...!!styles.hover && { '&:hover': mixinLabel(styles.hover) },
         ...!!styles.focus && { '&&:focus': mixinLabel(styles.focus) },
-        ...!!styles.dirty && { '&&&:data-dirty': mixinLabel(styles.dirty) },
-        ...!!styles.checked && { '&&&&:data-checked': mixinLabel(styles.checked) },
-        ...!!styles.valid && { '&&&&&:data-valid': mixinLabel(styles.valid) },
-        ...!!styles.invalid && { '&&&&&&:data-invalid': mixinLabel(styles.invalid) },
-        ...!!styles.disabled && { '&&&&&&&&:data-disabled': mixinLabel(styles.disabled) },
+        ...!!styles.dirty && { '&&&[data-dirty]': mixinLabel(styles.dirty) },
+        ...!!styles.checked && { '&&&&[data-checked]': mixinLabel(styles.checked) },
+        ...!!styles.valid && { '&&&&&[data-valid]': mixinLabel(styles.valid) },
+        ...!!styles.invalid && { '&&&&&&[data-invalid]': mixinLabel(styles.invalid) },
+        ...!!styles.disabled && { '&&&&&&&&[data-disabled]': mixinLabel(styles.disabled) },
       },
     },
   });
